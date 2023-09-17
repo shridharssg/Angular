@@ -1,9 +1,13 @@
 # Angular
 
+
+Q.Anular Hooks
+
 ```
 
 *why angular is called single page application--- 
-Single-Page Applications (SPAs) are Web apps that load a single HTML page and dynamically update that page as the user interacts with the app.
+Single-Page Applications (SPAs) are Web apps that load a single HTML page and
+dynamically update that page as the user interacts with the app.
 
 ---
 
