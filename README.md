@@ -1,18 +1,29 @@
 # Angular
 
+```
 
 Q.Angular Hooks pending
 
 ```
+---
+```
+
+Q.AOT vs JIT
+
+```
+---
+```
 
 Q. why angular is called single page application--- 
-Single-Page Applications (SPAs) are Web apps that load a single HTML page and
-dynamically update that page as the user interacts with the app.
+	Single-Page Applications (SPAs) are Web apps that load a single HTML page and
+	dynamically update that page as the user interacts with the app.
 
+```
 ---
+```
 
-*What is Typescript nd why we use it?
- TypeScript is an object-oriented programming language developed and maintained by Microsoft Corporation.
+Q. What is Typescript & why we use it?
+TypeScript is an object-oriented programming language developed and maintained by Microsoft Corporation.
 It is a superset of JavaScript and contains all of its elements and we can say that TypeScript is modern JavaScript with classes, optional types, interfaces, and more.
 TypeScript totally follows the OOPS concept and with the help of TSC (TypeScript Compiler), we can convert Typescript code (.ts file) to JavaScript (.js file)
 code.ts------>typescript compiler------->code.js
@@ -24,24 +35,29 @@ TypeScript provides highly productive development tools for JavaScript IDE
 TypeScript makes code easier to read and understand
 TypeScript is nothing but JavaScript with some additional features
 
+```
 ---
+```
 
-*Difference between typescript and javascript:
+Q. Difference between typescript and javascript:
+
 typescript 
-1.In contrast of type we can say that Typescript is a heavy weight and strongly typed object oriented compile language which is developed by Microsoft.
-2.Internal implementation of Typescriipt does not allow it to be used at server side.It can only be used at client side.
-3.For binding the data at code level Typescript uses concepts like types and interfaces to describe data being used.
-4.Code written in Typescript first need to get compiled and then converted to Javascript this process of conversion is known as Trans-piled
+	1.In contrast of type we can say that Typescript is a heavy weight and strongly typed object oriented compile language which is developed by Microsoft.
+	2.Internal implementation of Typescriipt does not allow it to be used at server side.It can only be used at client side.
+	3.For binding the data at code level Typescript uses concepts like types and interfaces to describe data being used.
+	4.Code written in Typescript first need to get compiled and then converted to Javascript this process of conversion is known as Trans-piled
 
 javascript
-1.Javascript on other hand is a light weight interpreted language and is introduced by Netscape.
-2.On other hand Javascript can be used both at client side and server side.
-3.No such concepts has been introduced in Javascript.
-4.On other hand no compilation is needed in case of Javascript.
+	1.Javascript on other hand is a light weight interpreted language and is introduced by Netscape.
+	2.On other hand Javascript can be used both at client side and server side.
+	3.No such concepts has been introduced in Javascript.
+	4.On other hand no compilation is needed in case of Javascript.
 
+```
 ---
+```
 
-*Angular structure
+Q. Angular structure
 
 Angular is a single page framework and platform to develop scalable applications.
 An angular application is built on top of Node.js and written in TypeScript.
@@ -59,9 +75,11 @@ NgModules, Components, Views, and Services are the basic building blocks of an a
 4.Service (injectable):If the data or functionality is not view specific, then it can be moved into a service.
  A Service provides extra functionality that can be injected into Components through dependency injection
 
+```
 ---
+```
 
-*Data Binding
+Q. Data Binding
 
 Data binding in AngularJS is the synchronization between the model and the view.
 
@@ -103,9 +121,12 @@ export class AppComponent {
   review="Default review";
 }
 
+```
 ---
+```
 
-**Pipes**
+Q. Pipes
+
 . Angular Pipes are used to transform data on a template, without writing a boilerplate code in a component.
 . A pipe takes in data as input and transforms it to the desired output.
 . We can apply two formats to single data by chaining pipes. A chained pipe is when the output of the first pipe is input to the next pipe.
@@ -114,38 +135,40 @@ export class AppComponent {
 Eg:Date Pipe: {{ dateToday | date | uppercase}}<br>       o/p:JAN 24, 2022
 Name: {{ name | uppercase}}       o/p:RAMYA
 
-1.
-Pure pipe
-A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe
-Eg: {{ myVariable | filterPipe }}
-@Pipe({
-  name: 'filterPipe', 
-  pure: true     
-})
-export class FilterPipe {}
+1.Pure pipe
+	A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe
+	Eg: {{ myVariable | filterPipe }}
+	@Pipe({
+	  name: 'filterPipe', 
+	  pure: true     
+	})
+	export class FilterPipe {}
 
 
 2.Impure pipe:
-An impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes.
- you can make *any* Pipe impure just by setting the pure flag to false in your declaration 
-
-@Pipe({
-  name: 'filterPipe', 
-  pure: false
-})
-export class FilterPipe{}
+	An impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes.
+	 you can make *any* Pipe impure just by setting the pure flag to false in your declaration 
+	
+	@Pipe({
+	  name: 'filterPipe', 
+	  pure: false
+	})
+	export class FilterPipe{}
 
 
 Pure pipes are the pipes which are executed only when a “PURE CHANGE” to the input value is detected.
 So impure pipe executes everytime irrespective of source has changed or not. which leads to bad performance. thats why it is not recommneded to use pipes for filtering data.
 
-3.Custom Pipes: convert the data in the format that you desire. Angular Pipes are TypeScript classes with the @Pipe decorator. 
+3.Custom Pipes:
+	convert the data in the format that you desire. Angular Pipes are TypeScript classes with the @Pipe decorator. 
 
 (https://medium.com/@ghoul.ahmed5/pure-vs-impure-pipe-in-angular-2152cf073e4d) Link for Pipe
 
+```
 ---
+```
 
-*Angular Route Guards
+Q. Angular Route Guards
 
 We use the Angular Guards to control, whether the user can navigate to or away from the current route.
 
@@ -169,9 +192,13 @@ The Angular Router supports Five different guards, which you can use to protect 
 4.CanLoad
 5.CanActivateChild
 
+```
 ---
+```
 
-*Forms--Forms are used to handle user input data. Angular 8 supports two types of forms. They are Template driven forms and Reactive forms
+Q. Forms
+
+--Forms are used to handle user input data. Angular 8 supports two types of forms. They are Template driven forms and Reactive forms
 
 1.Template driven forms : Template driven forms is created using directives in the template. It is mainly used for creating a simple form application
 2.Reactive Forms
@@ -180,7 +207,7 @@ Reactive Forms is created inside component class so it is also referred as model
 
 ---
 
-*SetValue and patchValue difference:
+Q. SetValue and patchValue difference
 
 1. If setValue is passed with an object that have lesser or greater number of keys as compared to form controls, then setValue will through error.
 If patchValue is passed with an object that have lesser or greater number of keys as compared to form controls, then patchValue will patch value for those controls which are matching with this FormGroup structure and will not throw any error.
@@ -188,9 +215,11 @@ If patchValue is passed with an object that have lesser or greater number of key
 2. Suppose we pass an object to setValue with an extra key, let’s say, ‘xyz’ which are not part of the structure of userForm.We will get error in browser console.
 Object with extra key will work with patchValue method. It will not throw error and update the form control value for matching keys.
 
+```
 ---
+```
 
-*directives
+Q. Directives
 
 AngularJS directives are extended HTML attributes with the prefix ng-.
 The ng-app directive initializes an AngularJS application.
@@ -202,9 +231,11 @@ eg: <div ng-app="" ng-init="firstName='John'">
 <p>You wrote: {{ firstName }}</p>
 </div>
 
+```
 ---
+```
 
-*routing
+Q. Routing
 
 If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application), with no page reloading, you can use the ngRoute module.
 
@@ -216,7 +247,9 @@ app.config(function($routeProvider) {
   })
 Now your application has access to the route module, which provides the $routeProvider(to configure diff routes in app)
 
+```
 ---
+```
 
 **lazy loading**
 
@@ -235,14 +268,18 @@ Declarations: It receives an array of the components.
 Export: Defines an array of components, directives, and pipes used by other modules.
 Provider: Declares services that are available to the entire application if it is a root module.
 
+```
 ---
+```
 
-**sharing data**
-1.Share data b/w parent and child component:
+Q. sharing data
+1.Share data b/w parent to child component:
 
+```
 ---
+```
 
-*diff b/w promise and observable
+Q. Diff b/w promise and observable
 Promise-A Promise handles a single event when an async operation completes or fails.            							
 Observable-An Observable is like a Stream (in many languages) and allows to pass zero or more events where the callback is called for each event.
 
@@ -274,9 +311,11 @@ Observable	---------->fail
 		|	success
 		---------------->subscribe(), map(),Filter()
 
+```
 ---
+```
 
-**async pipe**
+Q. async pipe
 
 The async pipe in angular will subscribe to an Observable or Promise and return the latest value it has emitted. Whenever a new value is emitted from an Observable or Promise, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks.
 
@@ -291,13 +330,20 @@ export class AsyncObservablePipeComponent {
   });
 }
 
+```
+---
+```
 
-**Http Modules(get,Post)**
+Q. Http Modules(get,Post)
 
 Post syntax:this.http.post<any>('apiURL')//<any> is used to handle any properties returned in the response
 Get Syntax: this.http.get<any>('apiURL')
 
-**Interceptors**
+```
+---
+```
+
+Q. Interceptors
 
 HttpInterceptor was introduced with Angular 4.3. It provides a way to intercept HTTP requests and responses to transform or handle them before passing them along.Although interceptors are capable of mutating requests and responses, the HttpRequest and HttpResponse instance properties are read-only, rendering them largely immutable
 
@@ -306,7 +352,9 @@ Angular app--------->Interceptors---------->Backend
 	  <---------    	<----------	   	
 	        res		   res
 
-**rxjs**
+```
+---
+```
 
 let emp=[{}]
 emp.sort((a,b)=>{
