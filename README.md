@@ -105,23 +105,42 @@ export class AppComponent {
 
 ---
 
-*Pipes
+**Pipes**
 Angular Pipes are used to transform data on a template, without writing a boilerplate code in a component.
 A pipe takes in data as input and transforms it to the desired output.
+It is decorated with @pipe and implements from PipeTransform
 
 Eg:Date Pipe: {{ dateToday | date | uppercase}}<br>       o/p:JAN 24, 2022
 Name: {{ name | uppercase}}       o/p:RAMYA
 
-1.Pure Pipe:A “pure” pipe, is an Angular Pipe that only runs when the underlying variable value changes. 
-Eg: {{ myVariable | myPipe }}
-
-2.Impure pipe: you can make *any* Pipe impure just by setting the pure flag to false in your declaration 
+1.
+Pure pipe
+A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe
+Eg: {{ myVariable | filterPipe }}
 @Pipe({
-  name: 'myPipe', 
-  pure : false
+  name: 'filterPipe', 
+  pure: true     
 })
+export class FilterPipe {}
+
+
+2.Impure pipe:
+An impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes.
+ you can make *any* Pipe impure just by setting the pure flag to false in your declaration 
+
+@Pipe({
+  name: 'filterPipe', 
+  pure: false
+})
+export class FilterPipe{}
+
+
+Pure pipes are the pipes which are executed only when a “PURE CHANGE” to the input value is detected.
+So impure pipe executes everytime irrespective of source has changed or not. which leads to bad performance. thats why it is not recommneded to use pipes for filtering data.
 
 3.Custom Pipes: convert the data in the format that you desire. Angular Pipes are TypeScript classes with the @Pipe decorator. 
+
+(https://medium.com/@ghoul.ahmed5/pure-vs-impure-pipe-in-angular-2152cf073e4d) Link for Pipe
 
 ---
 
