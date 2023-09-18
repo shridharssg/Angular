@@ -106,9 +106,10 @@ export class AppComponent {
 ---
 
 **Pipes**
-Angular Pipes are used to transform data on a template, without writing a boilerplate code in a component.
-A pipe takes in data as input and transforms it to the desired output.
-It is decorated with @pipe and implements from PipeTransform
+. Angular Pipes are used to transform data on a template, without writing a boilerplate code in a component.
+. A pipe takes in data as input and transforms it to the desired output.
+. We can apply two formats to single data by chaining pipes. A chained pipe is when the output of the first pipe is input to the next pipe.
+. It is decorated with @pipe and implements from PipeTransform
 
 Eg:Date Pipe: {{ dateToday | date | uppercase}}<br>       o/p:JAN 24, 2022
 Name: {{ name | uppercase}}       o/p:RAMYA
