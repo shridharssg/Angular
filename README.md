@@ -4,6 +4,10 @@
 
 Q.Angular Hooks pending
 
+Method 1: Parent to Child via @Input decorator.
+Method 2: Child to Parent via @Output decorator and EventEmitter.
+Method 3: Child to Parent via @ViewChild decorator.
+Method 4: Unrelated Components via a Service.
 
 ---
 
