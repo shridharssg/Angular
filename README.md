@@ -372,3 +372,20 @@ console.log(${e.name}${e.age})
 
 fun removeDuplicateArrayValues(arr){
 return [new Set(...arr]
+
+```
+
+---
+
+```
+**Circular dependency: **
+
+Circular dependency occurs when service A injects service B, but service B in turn injects service A, usually indirectly. For example, B depends on service C which depends on
+A – A -> B -> C -> A forms a circle
+
+how to resolved it ?
+
+In some scenarios,
+ we can duplicate the required code and solve circular dependency.
+Or we can create a new service and move that code to that new service to avoid circular dependency.
+```
