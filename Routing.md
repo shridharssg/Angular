@@ -15,6 +15,7 @@
 |73| [What is the purpose of Wildcard route?](#what-is-the-purpose-of-wildcard-route)|
 |74| [Do I need a Routing Module always?](#do-i-need-a-routing-module-always)|
 |282| [What are the Route Parameters? Could you explain each of them?](#what-are-the-route-parameters-could-you-explain-each-of-them)
+|207| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
 
 63. ### What is Angular Router?
     Angular Router is a mechanism in which navigation happens from one view to the next as users perform application tasks. It borrows the concepts or model of browser's application navigation. It enables developers to build Single Page Applications with multiple views and allow navigation between these views.
@@ -217,3 +218,14 @@
       Route parameters provide a flexible way to handle dynamic data in your Angular application. They allow you to create routes that can be easily customized and provide a seamless user experience by reflecting the current state of the application in the URL.
 
       **[⬆ Back to Top](#table-of-contents)**
+
+
+
+207. ### What is safe navigation operator?
+     The safe navigation operator(?)(or known as Elvis Operator) is used to guard against `null` and `undefined` values in property paths when you are not aware whether a path exists or not. i.e. It returns value of the object path if it exists, else it returns the null value.
+
+     For example, you can access nested properties of a user profile easily without null reference errors as below,
+     ```javascript
+     <p>The user firstName is: {{user?.fullName.firstName}}</p>
+     ```
+     Using this safe navigation operator, Angular framework stops evaluating the expression when it hits the first null value and renders the view without any errors.
