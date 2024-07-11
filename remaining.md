@@ -94,22 +94,12 @@
 |200| [What is the purpose of hidden property?](#what-is-the-purpose-of-hidden-property)|
 |201| [What is the difference between ngIf and hidden property?](#what-is-the-difference-between-ngif-and-hidden-property)|
 |202| [What is slice pipe?](#what-is-slice-pipe)|
-|203| [What is index property in ngFor directive?](#what-is-index-property-in-ngfor-directive)|
-|204| [What is the purpose of ngFor trackBy?](#what-is-the-purpose-of-ngfor-trackby)|
-|205| [What is the purpose of ngSwitch directive?](#what-is-the-purpose-of-ngswitch-directive)|
-|206| [Is it possible to do aliasing for inputs and outputs?](#is-it-possible-to-do-aliasing-for-inputs-and-outputs)|
 |207| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
 |208| [Is any special configuration required for Angular9?](#is-any-special-configuration-required-for-angular9)|
 |209| [What are type safe TestBed API changes in Angular9?](#what-are-type-safe-testbed-api-changes-in-angular9)|
 |210| [Is mandatory to pass static flag for ViewChild?](#is-mandatory-to-pass-static-flag-for-viewchild)|
 |211| [What are the list of template expression operators?](#what-are-the-list-of-template-expression-operators)
 |212| [What is the precedence between pipe and ternary operators?](#what-is-the-precedence-between-pipe-and-ternary-operators)
-|222| [What is the role of ngModule metadata in compilation process?](#what-is-the-role-of-ngmodule-metadata-in-compilation-process)|
-|223| [How does angular finds components, directives and pipes?](#how-does-angular-finds-components-directives-and-pipes)|
-|224| [Give few examples for NgModules?](#give-few-examples-for-ngmodules)|
-|225| [What are feature modules?](#what-are-feature-modules)|
-|226| [What are the imported modules in CLI generated feature modules?](#what-are-the-imported-modules-in-cli-generated-feature-modules)|
-|227| [What are the differences between ngmodule and javascript module?](#what-are-the-differences-between-ngmodule-and-javascript-module)|
 |228| [What are the possible errors with declarations?](#what-are-the-possible-errors-with-declarations)|
 |229| [What are the steps to use declaration elements?](#what-are-the-steps-to-use-declaration-elements)|
 |230| [What happens if browserModule used in feature module?](#what-happens-if-browsermodule-used-in-feature-module)|
@@ -1544,66 +1534,6 @@
 
 212. ### What is the precedence between pipe and ternary operators?
      The pipe operator has a higher precedence than the ternary operator (?:). For example, the expression `first ? second : third | fourth` is parsed as `first ? second : (third | fourth)`.
-
-     **[⬆ Back to Top](#table-of-contents)**
-     **[⬆ Back to Top](#table-of-contents)**
-
-222. ### What is the role of ngModule metadata in compilation process?
-     The `@NgModule` metadata is used to tell the Angular compiler what components to be compiled for this module and how to link this module with other modules.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-223. ### How does angular finds components, directives and pipes?
-     The Angular compiler finds a component or directive in a template when it can match the selector of that component or directive in that template. Whereas it finds a pipe if the pipe's name appears within the pipe syntax of the template HTML.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-224. ### Give few examples for NgModules?
-     The Angular core libraries and third-party libraries are available as NgModules.
-     1. Angular libraries such as FormsModule, HttpClientModule, and RouterModule are NgModules.
-     2. Many third-party libraries such as Material Design, Ionic, and AngularFire2 are NgModules.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-225. ### What are feature modules?
-     Feature modules are NgModules, which are used for the purpose of organizing code. The feature module can be created with Angular CLI using the below command in the root directory,
-     ```javascript
-     ng generate module MyCustomFeature //
-     ```
-     Angular CLI creates a folder called `my-custom-feature` with a file inside called `my-custom-feature.module.ts` with the following contents
-     ```javascript
-     import { NgModule } from '@angular/core';
-     import { CommonModule } from '@angular/common';
-
-     @NgModule({
-       imports: [
-         CommonModule
-       ],
-       declarations: []
-     })
-     export class MyCustomFeature { }
-     ```
-
-     **Note:**  The "Module" suffix shouldn't present in the name because the CLI appends it.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-226. ### What are the imported modules in CLI generated feature modules?
-     In the CLI generated feature module, there are two JavaScript import statements at the top of the file
-     1. **NgModule:** InOrder to use the `@NgModule` decorator
-     2. **CommonModule:** It provides many common directives such as `ngIf` and `ngFor`.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-227. ### What are the differences between ngmodule and javascript module?
-     Below are the main differences between Angular NgModule and javascript module,
-
-     | NgModule | JavaScript module |
-     |---- | --------- |
-     | NgModule bounds declarable classes only | There is no restriction classes |
-     | List the module's classes in declarations array only | Can define all member classes in one giant file |
-     | It only export the declarable classes it owns or imports from other modules| It can export any classes |
-     | Extend the entire application with services by adding providers to provides array | Can't extend the application with services |
 
      **[⬆ Back to Top](#table-of-contents)**
 
