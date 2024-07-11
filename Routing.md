@@ -41,7 +41,8 @@
   **[⬆ Back to Top](#table-of-contents)**
 
 4. ### What is router outlet?
-    The RouterOutlet is a directive from the router library and it acts as a placeholder that marks the spot in the template where the router should display the components for that outlet. Router outlet is used like a component,
+    To render components associated with routes, you need to add a <router-outlet></router-outlet> element in your main app component's template. This is where the activated component will be displayed.
+   Router outlet is used like a component,
 
     ```html
     <router-outlet></router-outlet>
@@ -51,7 +52,7 @@
   **[⬆ Back to Top](#table-of-contents)**
 
 5. ### What are router links?
-    The RouterLink is a directive on the anchor tags give the router control over those elements. Since the navigation paths are fixed, you can assign string values to router-link directive as below,
+   You can navigate to different routes using the RouterLink directive in your templates. The RouterLink is a directive on the anchor tags.
 
     ```html
     <h1>Angular Router</h1>
@@ -60,6 +61,16 @@
       <a routerLink="/completed" >Completed todos</a>
     </nav>
     <router-outlet></router-outlet>
+    ```
+
+    Programmatically, you can use the Router service for navigation in component code.
+
+    ```javascript
+    import { Router } from '@angular/router';
+    constructor(private router: Router) {}
+    navigateToProducts() {
+      this.router.navigate(['/products']);
+    }
     ```
 
   **[⬆ Back to Top](#table-of-contents)**
@@ -229,3 +240,44 @@
      <p>The user firstName is: {{user?.fullName.firstName}}</p>
      ```
      Using this safe navigation operator, Angular framework stops evaluating the expression when it hits the first null value and renders the view without any errors.
+
+
+ 15. ### Route Parameters
+
+    Routes can have parameters to pass data between components. You define route parameters in the route configuration.
+
+    ```javascript
+    const routes: Routes = [
+      { path: 'products/:id', component: ProductDetailComponent },
+    ];
+    
+    ```
+
+    Access route parameters in a component using ActivatedRoute.
+
+    ```javascript    
+        import { ActivatedRoute } from '@angular/router';
+        constructor(private route: ActivatedRoute) {
+          this.route.params.subscribe(params => {
+            this.productId = params['id'];
+          });
+        }
+    ```
+    
+    ---
+
+ 16. ### Child Routes:
+    You can create nested or child routes to organize your application’s routes hierarchically.
+    
+    ```javascript    
+    const routes: Routes = [
+      {
+        path: 'products',
+        component: ProductsComponent,
+        children: [
+            { path: 'list', component: ProductListComponent },
+          { path: 'detail/:id', component: ProductDetailComponent },
+        ],
+      },
+    ];
+    ```
