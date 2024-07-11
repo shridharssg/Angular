@@ -8,9 +8,9 @@
 |4| [What is a custom pipe?](#what-is-a-custom-pipe)|
 |5| [Give an example of custom pipe?](#give-an-example-of-custom-pipe)|
 |6| [What is the difference between pure and impure pipe?](#what-is-the-difference-between-pure-and-impure-pipe)|
-|202| [What is slice pipe?](#what-is-slice-pipe)|
+|7| [What is slice pipe?](#what-is-slice-pipe)|
 
-28. ### What are pipes?
+1. ### What are pipes?
     Pipes are simple functions that use [template expressions](#what-are-template-expressions) to accept data as input and transform it into a desired output. For example, let us take a pipe to transform a component's birthday property into a human-friendly date using **date** pipe.
 
     ```javascript
@@ -27,7 +27,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-29. ### What is a parameterized pipe?
+2. ### What is a parameterized pipe?
     A pipe can accept any number of optional parameters to fine-tune its output. The parameterized pipe can be created by declaring the pipe name with a colon ( : ) and then the parameter value. If the pipe accepts multiple parameters, separate the values with colons. Let's take a birthday example with a particular format(dd/MM/yyyy):
 
     ```javascript
@@ -45,7 +45,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-30. ### How do you chain pipes?
+3. ### How do you chain pipes?
     You can chain pipes together in potentially useful combinations as per the needs. Let's take a birthday property which uses date pipe(along with parameter) and uppercase pipes as below
 
     ```javascript
@@ -63,7 +63,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-31. ### What is a custom pipe?
+4. ### What is a custom pipe?
     Apart from built-in pipes, you can write your own custom pipe with the below key characteristics:
     1. A pipe is a class decorated with pipe metadata `@Pipe` decorator, which you import from the core Angular library
        For example,
@@ -84,7 +84,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-32. ### Give an example of custom pipe?
+5. ### Give an example of custom pipe?
     You can create custom reusable pipes for the transformation of existing value. For example, let us create a custom pipe for finding file size based on an extension,
       ```javascript
         import { Pipe, PipeTransform } from '@angular/core';
@@ -106,13 +106,23 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-33. ### What is the difference between pure and impure pipe?
-    A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe. For example, any changes to a primitive input value (String, Number, Boolean, Symbol) or a changed object reference (Date, Array, Function, Object). An impure pipe is called for every change detection cycle no matter whether the value or parameters changes. i.e, An impure pipe is called often, as often as every keystroke or mouse-move.
+6. ### What is the difference between pure and impure pipe?
+    A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe. For example, any changes to a primitive input value (String, Number, Boolean, Symbol) or a changed object reference (Date, Array, Function, Object).
+
+   An impure pipe is called for every change detection cycle no matter whether the value or parameters changes. i.e, An impure pipe is called often, as often as every keystroke or mouse-move.
+   
+```javascript
+   @Pipe({
+	  name: 'filterPipe', 
+	  pure: false
+	})
+	export class FilterPipe{}
+```
 
   **[⬆ Back to Top](#table-of-contents)**
 
   
-202. ### What is slice pipe?
+7. ### What is slice pipe?
      The slice pipe is used to create a new Array or String containing a subset (slice) of the elements. The syntax looks like as below,
      ```javascript
      {{ value_expression | slice : start [ : end ] }}
