@@ -2,27 +2,27 @@
 
 | No. | Questions |
 |---- | ---------
-|63| [What is Angular Router?](#what-is-angular-router)|
-|64| [What is the purpose of base href tag?](#what-is-the-purpose-of-base-href-tag)|
-|65| [What are the router imports?](#what-are-the-router-imports)|
-|66| [What is router outlet?](#what-is-router-outlet)|
-|67| [What are router links?](#what-are-router-links)|
-|68| [What are active router links?](#what-are-active-router-links)|
-|69| [What is router state?](#what-is-router-state)|
-|70| [What are router events?](#what-are-router-events)|
-|71| [What is activated route?](#what-is-activated-route)|
-|72| [How do you define routes?](#how-do-you-define-routes)|
-|73| [What is the purpose of Wildcard route?](#what-is-the-purpose-of-wildcard-route)|
-|74| [Do I need a Routing Module always?](#do-i-need-a-routing-module-always)|
-|282| [What are the Route Parameters? Could you explain each of them?](#what-are-the-route-parameters-could-you-explain-each-of-them)
-|207| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
+|1| [What is Angular Router?](#what-is-angular-router)|
+|2| [What is the purpose of base href tag?](#what-is-the-purpose-of-base-href-tag)|
+|3| [What are the router imports?](#what-are-the-router-imports)|
+|4| [What is router outlet?](#what-is-router-outlet)|
+|5| [What are router links?](#what-are-router-links)|
+|6| [What are active router links?](#what-are-active-router-links)|
+|7| [What is router state?](#what-is-router-state)|
+|8| [What are router events?](#what-are-router-events)|
+|9| [What is activated route?](#what-is-activated-route)|
+|10| [How do you define routes?](#how-do-you-define-routes)|
+|11| [What is the purpose of Wildcard route?](#what-is-the-purpose-of-wildcard-route)|
+|12| [Do I need a Routing Module always?](#do-i-need-a-routing-module-always)|
+|13| [What are the Route Parameters? Could you explain each of them?](#what-are-the-route-parameters-could-you-explain-each-of-them)
+|14| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
 
-63. ### What is Angular Router?
-    Angular Router is a mechanism in which navigation happens from one view to the next as users perform application tasks. It borrows the concepts or model of browser's application navigation. It enables developers to build Single Page Applications with multiple views and allow navigation between these views.
+1. ### What is Angular Router?
+    Angular Router is a mechanism in which navigation happens from one view to the next as users perform application tasks. It enables developers to build Single Page Applications with multiple views and allow navigation between these views.
 
   **[⬆ Back to Top](#table-of-contents)**
 
-64. ### What is the purpose of base href tag?
+2. ### What is the purpose of base href tag?
     The routing application should add <base> element to the index.html as the first child in the <head> tag in order to indicate how to compose navigation URLs. If app folder is the application root then you can set the href value as below
 
     ```html
@@ -31,8 +31,8 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-65. ### What are the router imports?
-    The Angular Router which represents a particular component view for a given URL is not part of Angular Core. It is available in library named `@angular/router` to import required router components. For example, we import them in app module as below,
+3. ### What are the router imports?
+    The Angular Router is not part of Angular Core. It is available in library named `@angular/router` so need to import required router components. For example, we import them in app module as below,
 
     ```javascript
     import { RouterModule, Routes } from '@angular/router';
@@ -40,8 +40,8 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-66. ### What is router outlet?
-    The RouterOutlet is a directive from the router library and it  acts as a placeholder that marks the spot in the template where the router should display the components for that outlet. Router outlet is used like a component,
+4. ### What is router outlet?
+    The RouterOutlet is a directive from the router library and it acts as a placeholder that marks the spot in the template where the router should display the components for that outlet. Router outlet is used like a component,
 
     ```html
     <router-outlet></router-outlet>
@@ -50,7 +50,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-67. ### What are router links?
+5. ### What are router links?
     The RouterLink is a directive on the anchor tags give the router control over those elements. Since the navigation paths are fixed, you can assign string values to router-link directive as below,
 
     ```html
@@ -64,7 +64,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-68. ### What are active router links?
+6. ### What are active router links?
     RouterLinkActive is a directive that toggles css classes for active RouterLink bindings based on the current RouterState. i.e, The Router will add CSS classes when this link is active and remove when the link is inactive. For example, you can add them to RouterLinks as below.
 
     ```html
@@ -78,7 +78,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-69. ### What is router state?
+7. ### What is router state?
     RouterState is a tree of activated routes. Every node in this tree knows about the "consumed" URL segments, the extracted parameters, and the resolved data. You can access the current RouterState from anywhere in the application using the `Router service` and the `routerState` property.
 
     ```javascript
@@ -96,7 +96,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-70. ### What are router events?
+8. ### What are router events?
     During each navigation, the Router emits navigation events through the Router.events property allowing you to track the lifecycle of the route.
 
     The sequence of router events is as below,
@@ -120,7 +120,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-71. ### What is activated route?
+9. ### What is activated route?
     ActivatedRoute contains the information about a route associated with a component loaded in an outlet. It can also be used to traverse the router state tree. The ActivatedRoute will be injected as a router service to access the information. In the below example, you can access route path and parameters,
 
     ```javascript
@@ -137,7 +137,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-72. ### How do you define routes?
+10. ### How do you define routes?
      A router must be configured with a list of route definitions. You configures the router with routes via the `RouterModule.forRoot()` method, and adds the result to the AppModule's `imports` array.
 
     ```javascript
@@ -170,7 +170,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-73. ### What is the purpose of Wildcard route?
+11. ### What is the purpose of Wildcard route?
     If the URL doesn't match any predefined routes then it causes the router to throw an error and crash the app. In this case, you can use wildcard route. A wildcard route has a path consisting of two asterisks to match every URL.
 
     For example, you can define PageNotFoundComponent for wildcard route as below
@@ -180,13 +180,13 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-74. ### Do I need a Routing Module always?
+12. ### Do I need a Routing Module always?
     No, the Routing Module is a design choice. You can skip routing Module (for example, AppRoutingModule) when the configuration is simple and merge the routing configuration directly into the companion module (for example, AppModule). But it is recommended when the configuration is complex and includes specialized guard and resolver services.
 
   **[⬆ Back to Top](#table-of-contents)**
 
 
-282. ### What are the Route Parameters? Could you explain each of them?.
+13. ### What are the Route Parameters? Could you explain each of them?.
       Route parameters are used to pass dynamic values in the URL of a route. They allow you to define variable segments in the route path, which can be accessed and used by components and services. Path parameters are represented by a colon (":") followed by the parameter name.
 
       There are three types of route parameters in Angular:
@@ -221,7 +221,7 @@
 
 
 
-207. ### What is safe navigation operator?
+14. ### What is safe navigation operator?
      The safe navigation operator(?)(or known as Elvis Operator) is used to guard against `null` and `undefined` values in property paths when you are not aware whether a path exists or not. i.e. It returns value of the object path if it exists, else it returns the null value.
 
      For example, you can access nested properties of a user profile easily without null reference errors as below,
