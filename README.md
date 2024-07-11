@@ -1,8 +1,6 @@
 # Angular
 
-```
-
-Q.Angular Hooks pending
+###Q.Hooks pending
 
 Method 1: Parent to Child via @Input decorator.
 Method 2: Child to Parent via @Output decorator and EventEmitter.
@@ -11,28 +9,22 @@ Method 4: Unrelated Components via a Service.
 
 ---
 
-constructor vs ngOnInit()
+### constructor vs ngOnInit()
 The constructor() should only be used to initialize class members but shouldn't do actual “work”. So, we should use constructor() to setup Dependency Injection, Initialization of class fields etc. ngOnInit() is a better place to write “actual work code” that we need to execute as soon as the class is instantiated.
 
-```
 ---
-```
 
-Q.AOT vs JIT
+### Q.AOT vs JIT
 
-```
 ---
-```
 
-Q. why angular is called single page application--- 
+### Q. why angular is called single page application--- 
 	Single-Page Applications (SPAs) are Web apps that load a single HTML page and
 	dynamically update that page as the user interacts with the app.
 
-```
 ---
-```
 
-Q. What is Typescript & why we use it?
+### Q. What is Typescript & why we use it?
 TypeScript is an object-oriented programming language developed and maintained by Microsoft Corporation.
 It is a superset of JavaScript and contains all of its elements and we can say that TypeScript is modern JavaScript with classes, optional types, interfaces, and more.
 TypeScript totally follows the OOPS concept and with the help of TSC (TypeScript Compiler), we can convert Typescript code (.ts file) to JavaScript (.js file)
@@ -45,11 +37,9 @@ TypeScript provides highly productive development tools for JavaScript IDE
 TypeScript makes code easier to read and understand
 TypeScript is nothing but JavaScript with some additional features
 
-```
 ---
-```
 
-Q. Difference between typescript and javascript:
+### Q. Difference between typescript and javascript:
 
 typescript 
 	1.In contrast of type we can say that Typescript is a heavy weight and strongly typed object oriented compile language which is developed by Microsoft.
@@ -63,11 +53,9 @@ javascript
 	3.No such concepts has been introduced in Javascript.
 	4.On other hand no compilation is needed in case of Javascript.
 
-```
 ---
-```
 
-Q. Angular structure
+### Q. Angular structure
 
 Angular is a single page framework and platform to develop scalable applications.
 An angular application is built on top of Node.js and written in TypeScript.
@@ -85,11 +73,9 @@ NgModules, Components, Views, and Services are the basic building blocks of an a
 4.Service (injectable):If the data or functionality is not view specific, then it can be moved into a service.
  A Service provides extra functionality that can be injected into Components through dependency injection
 
-```
 ---
-```
 
-Q. Data Binding
+### Q. Data Binding
 
 Data binding in AngularJS is the synchronization between the model and the view.
 
@@ -131,11 +117,9 @@ export class AppComponent {
   review="Default review";
 }
 
-```
 ---
-```
 
-Q. Pipes
+### Q. Pipes
 
 . Angular Pipes are used to transform data on a template, without writing a boilerplate code in a component.
 . A pipe takes in data as input and transforms it to the desired output.
@@ -178,7 +162,7 @@ So impure pipe executes everytime irrespective of source has changed or not. whi
 ---
 ```
 
-Q. Angular Route Guards
+### Q. Angular Route Guards
 
 We use the Angular Guards to control, whether the user can navigate to or away from the current route.
 
@@ -202,11 +186,9 @@ The Angular Router supports Five different guards, which you can use to protect 
 4.CanLoad
 5.CanActivateChild
 
-```
 ---
-```
 
-Q. Forms
+### Q. Forms
 
 --Forms are used to handle user input data. Angular 8 supports two types of forms. They are Template driven forms and Reactive forms
 
@@ -217,7 +199,7 @@ Reactive Forms is created inside component class so it is also referred as model
 
 ---
 
-Q. SetValue and patchValue difference
+### Q. SetValue and patchValue difference
 
 1. If setValue is passed with an object that have lesser or greater number of keys as compared to form controls, then setValue will through error.
 If patchValue is passed with an object that have lesser or greater number of keys as compared to form controls, then patchValue will patch value for those controls which are matching with this FormGroup structure and will not throw any error.
@@ -225,11 +207,9 @@ If patchValue is passed with an object that have lesser or greater number of key
 2. Suppose we pass an object to setValue with an extra key, let’s say, ‘xyz’ which are not part of the structure of userForm.We will get error in browser console.
 Object with extra key will work with patchValue method. It will not throw error and update the form control value for matching keys.
 
-```
 ---
-```
 
-Q. Directives
+### Q. Directives
 
 AngularJS directives are extended HTML attributes with the prefix ng-.
 The ng-app directive initializes an AngularJS application.
@@ -241,11 +221,9 @@ eg: <div ng-app="" ng-init="firstName='John'">
 <p>You wrote: {{ firstName }}</p>
 </div>
 
-```
 ---
-```
 
-Q. Routing
+### Q. Routing
 
 If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application), with no page reloading, you can use the ngRoute module.
 
@@ -257,9 +235,7 @@ app.config(function($routeProvider) {
   })
 Now your application has access to the route module, which provides the $routeProvider(to configure diff routes in app)
 
-```
 ---
-```
 
 **lazy loading**
 
@@ -278,18 +254,14 @@ Declarations: It receives an array of the components.
 Export: Defines an array of components, directives, and pipes used by other modules.
 Provider: Declares services that are available to the entire application if it is a root module.
 
-```
 ---
-```
 
-Q. sharing data
+### Q. sharing data
 1.Share data b/w parent to child component:
 
-```
 ---
-```
 
-Q. Diff b/w promise and observable
+### Q. Diff b/w promise and observable
 Promise-A Promise handles a single event when an async operation completes or fails.            							
 Observable-An Observable is like a Stream (in many languages) and allows to pass zero or more events where the callback is called for each event.
 
@@ -321,11 +293,9 @@ Observable	---------->fail
 		|	success
 		---------------->subscribe(), map(),Filter()
 
-```
 ---
-```
 
-Q. async pipe
+### Q. async pipe
 
 The async pipe in angular will subscribe to an Observable or Promise and return the latest value it has emitted. Whenever a new value is emitted from an Observable or Promise, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks.
 
@@ -340,20 +310,16 @@ export class AsyncObservablePipeComponent {
   });
 }
 
-```
 ---
-```
 
-Q. Http Modules(get,Post)
+### Q. Http Modules(get,Post)
 
 Post syntax:this.http.post<any>('apiURL')//<any> is used to handle any properties returned in the response
 Get Syntax: this.http.get<any>('apiURL')
 
-```
 ---
-```
 
-Q. Interceptors
+### Q.Interceptors
 
 HttpInterceptor was introduced with Angular 4.3. It provides a way to intercept HTTP requests and responses to transform or handle them before passing them along.Although interceptors are capable of mutating requests and responses, the HttpRequest and HttpResponse instance properties are read-only, rendering them largely immutable
 
@@ -362,9 +328,7 @@ Angular app--------->Interceptors---------->Backend
 	  <---------    	<----------	   	
 	        res		   res
 
-```
 ---
-```
 
 let emp=[{}]
 emp.sort((a,b)=>{
@@ -377,12 +341,9 @@ console.log(${e.name}${e.age})
 fun removeDuplicateArrayValues(arr){
 return [new Set(...arr]
 
-```
-
 ---
 
-```
-**Circular dependency: **
+### Q.Circular dependency:
 
 Circular dependency occurs when service A injects service B, but service B in turn injects service A, usually indirectly. For example, B depends on service C which depends on
 A – A -> B -> C -> A forms a circle
@@ -392,4 +353,4 @@ how to resolved it ?
 In some scenarios,
  we can duplicate the required code and solve circular dependency.
 Or we can create a new service and move that code to that new service to avoid circular dependency.
-```
+
