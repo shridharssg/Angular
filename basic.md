@@ -29,16 +29,17 @@
 |25| [What are template expressions?](#what-are-template-expressions)|
 |26| [What are template statements?](#what-are-template-statements)|
 |27| [How do you categorize data binding types?](#how-do-you-categorize-data-binding-types)|
-|125| [What are the class decorators in Angular?](#what-are-the-class-decorators-in-angular)|
-|126| [What are class field decorators?](#what-are-class-field-decorators)|
-|127| [What is declarable in Angular?](#what-is-declarable-in-angular)|
-|128| [What are the restrictions on declarable classes?](#what-are-the-restrictions-on-declarable-classes)|
-|222| [What is the role of ngModule metadata in compilation process?](#what-is-the-role-of-ngmodule-metadata-in-compilation-process)|
-|223| [How does angular finds components, directives and pipes?](#how-does-angular-finds-components-directives-and-pipes)|
-|224| [Give few examples for NgModules?](#give-few-examples-for-ngmodules)|
-|225| [What are feature modules?](#what-are-feature-modules)|
-|226| [What are the imported modules in CLI generated feature modules?](#what-are-the-imported-modules-in-cli-generated-feature-modules)|
-|227| [What are the differences between ngmodule and javascript module?](#what-are-the-differences-between-ngmodule-and-javascript-module)|
+|28| [What are the class decorators in Angular?](#what-are-the-class-decorators-in-angular)|
+|29| [What are class field decorators?](#what-are-class-field-decorators)|
+|30| [What is declarable in Angular?](#what-is-declarable-in-angular)|
+|31| [What are the restrictions on declarable classes?](#what-are-the-restrictions-on-declarable-classes)|
+|32| [What is the role of ngModule metadata in compilation process?](#what-is-the-role-of-ngmodule-metadata-in-compilation-process)|
+|33| [How does angular finds components, directives and pipes?](#how-does-angular-finds-components-directives-and-pipes)|
+|34| [Give few examples for NgModules?](#give-few-examples-for-ngmodules)|
+|35| [What are feature modules?](#what-are-feature-modules)|
+|36| [What are the imported modules in CLI generated feature modules?](#what-are-the-imported-modules-in-cli-generated-feature-modules)|
+|37| [What are the differences between ngmodule and javascript module?](#what-are-the-differences-between-ngmodule-and-javascript-module)|
+|38| [How many way we can share data between component?](#how-many-way-we-can-share-data-between-component)|
 
 
 1. ### What is Angular Framework?
@@ -682,4 +683,5 @@
 23. ### Is it possible to call an API in the constructor of an Angular component instead of using the ngOnInit lifecycle hook?
     
     While it is technically possible to call an API from the Angular constructor, it’s not considered a best practice. The constructor is invoked when the component class is     initialized, before Angular has fully initialized certain features like dependency injection or input properties. This means that calling an API before these features are fully available may lead to unexpected behavior or errors.
+    
 
