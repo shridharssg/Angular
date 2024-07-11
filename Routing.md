@@ -267,6 +267,7 @@
     ---
 
  16. ### Child Routes:
+     
     You can create nested or child routes to organize your application’s routes hierarchically.
     
     ```javascript    
@@ -281,3 +282,16 @@
       },
     ];
     ```
+    
+17. ### Lazy Loading:
+
+Lazy loading allows you to load parts of your application on-demand, reducing initial loading times. You configure lazy-loaded routes using the loadChildren property. 
+
+```
+    const routes: Routes = [
+      {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+      },
+    ];
+```
