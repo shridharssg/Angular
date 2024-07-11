@@ -93,7 +93,6 @@
 |199| [How can I use SASS in angular project?](#how-can-i-use-sass-in-angular-project)|
 |200| [What is the purpose of hidden property?](#what-is-the-purpose-of-hidden-property)|
 |201| [What is the difference between ngIf and hidden property?](#what-is-the-difference-between-ngif-and-hidden-property)|
-|202| [What is slice pipe?](#what-is-slice-pipe)|
 |207| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
 |208| [Is any special configuration required for Angular9?](#is-any-special-configuration-required-for-angular9)|
 |209| [What are type safe TestBed API changes in Angular9?](#what-are-type-safe-testbed-api-changes-in-angular9)|
@@ -1405,114 +1404,6 @@
      ```javascript
      ng set defaults.styleExt scss
      ```
-     **[⬆ Back to Top](#table-of-contents)**
-
-
-
-202. ### What is slice pipe?
-     The slice pipe is used to create a new Array or String containing a subset (slice) of the elements. The syntax looks like as below,
-     ```javascript
-     {{ value_expression | slice : start [ : end ] }}
-     ```
-     For example, you can provide 'hello' list based on a greeting array,
-     ```javascript
-     @Component({
-       selector: 'list-pipe',
-       template: `<ul>
-         <li *ngFor="let i of greeting | slice:0:5">{{i}}</li>
-       </ul>`
-     })
-     export class PipeListComponent {
-       greeting: string[] = ['h', 'e', 'l', 'l', 'o', 'm','o', 'r', 'n', 'i', 'n', 'g'];
-     }
-     ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-203. ### What is index property in ngFor directive?
-     The index property of the NgFor directive is used to return the zero-based index of the item in each iteration. You can capture the index in a template input variable and use it in the template.
-
-     For example, you can capture the index in a variable named indexVar and displays it with the todo's name using ngFor directive as below.
-     ```javascript
-     <div *ngFor="let todo of todos; let i=index">{{i + 1}} - {{todo.name}}</div>
-     ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-204. ### What is the purpose of ngFor trackBy?
-     The main purpose of using *ngFor with trackBy option is performance optimization. Normally if you use NgFor with large data sets, a small change to one item by removing or adding an item, can trigger a cascade of DOM manipulations. In this case, Angular sees only a fresh list of new object references and to replace the old DOM elements with all new DOM elements. You can help Angular to track which items added or removed by providing a `trackBy` function which takes the index and the current item as arguments and needs to return the unique identifier for this item.
-
-     For example, lets set trackBy to the trackByTodos() method
-     ```javascript
-     <div *ngFor="let todo of todos; trackBy: trackByTodos">
-       ({{todo.id}}) {{todo.name}}
-     </div>
-     ```
-     and define the trackByTodos method,
-     ```javascript
-     trackByTodos(index: number, item: Todo): number { return todo.id; }
-     ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-205. ### What is the purpose of ngSwitch directive?
-     **NgSwitch** directive is similar to JavaScript switch statement which displays one element from among several possible elements, based on a switch condition. In this case only the selected element placed into the DOM. It has been used along with `NgSwitch`, `NgSwitchCase` and `NgSwitchDefault` directives.
-
-     For example, let's display the browser details based on selected browser using ngSwitch directive.
-     ```javascript
-     <div [ngSwitch]="currentBrowser.name">
-       <chrome-browser    *ngSwitchCase="'chrome'"    [item]="currentBrowser"></chrome-browser>
-       <firefox-browser   *ngSwitchCase="'firefox'"     [item]="currentBrowser"></firefox-browser>
-       <opera-browser     *ngSwitchCase="'opera'"  [item]="currentBrowser"></opera-browser>
-       <safari-browser     *ngSwitchCase="'safari'"   [item]="currentBrowser"></safari-browser>
-       <ie-browser  *ngSwitchDefault           [item]="currentItem"></ie-browser>
-     </div>
-     ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-206. ### Is it possible to do aliasing for inputs and outputs?
-     Yes, it is possible to do aliasing for inputs and outputs in two ways.
-     1. **Aliasing in metadata:** The inputs and outputs in the metadata aliased using a colon-delimited (:) string with the directive property name on the left and the public alias on the right. i.e. It will be in the format of propertyName:alias.
-         ```javascript
-         inputs: ['input1: buyItem'],
-         outputs: ['outputEvent1: completedEvent']
-         ```
-     2. **Aliasing with @Input()/@Output() decorator:** The alias can be specified for the property name by passing the alias name to the @Input()/@Output() decorator.i.e. It will be in the form of @Input(alias) or @Output(alias).
-         ```javascript
-         @Input('buyItem') input1: string;
-         @Output('completedEvent') outputEvent1 = new EventEmitter<string>();
-         ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-207. ### What is safe navigation operator?
-     The safe navigation operator(?)(or known as Elvis Operator) is used to guard against `null` and `undefined` values in property paths when you are not aware whether a path exists or not. i.e. It returns value of the object path if it exists, else it returns the null value.
-
-     For example, you can access nested properties of a user profile easily without null reference errors as below,
-     ```javascript
-     <p>The user firstName is: {{user?.fullName.firstName}}</p>
-     ```
-     Using this safe navigation operator, Angular framework stops evaluating the expression when it hits the first null value and renders the view without any errors.
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-208. ### Is any special configuration required for Angular9?
-     You don't need any special configuration. In Angular9, the Ivy renderer is the default Angular compiler. Even though Ivy is available Angular8 itself, you had to configure it in tsconfig.json file as below,
-     ```javascript
-     "angularCompilerOptions": {    "enableIvy": true  }
-     ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
-209. ### What are type safe TestBed API changes in Angular9?
-     Angular 9 provides type safe changes in TestBed API changes by replacing the old get function with the new inject method. Because TestBed.get method is not type-safe. The usage would be as below,
-     ```javascript
-     TestBed.get(ChangeDetectorRef) // returns any. It is deprecated now.
-
-     TestBed.inject(ChangeDetectorRef) // returns ChangeDetectorRef
-     ```
-
      **[⬆ Back to Top](#table-of-contents)**
 
 210. ### Is mandatory to pass static flag for ViewChild?
