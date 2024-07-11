@@ -34,9 +34,6 @@
 |106| [What is transition function?](#what-is-transition-function)|
 |107| [How to inject the dynamic script in angular?](#how-to-inject-the-dynamic-script-in-angular)|
 |110| [What are the differences between AngularJS and Angular with respect to dependency injection?](#what-are-the-differences-between-angularjs-and-angular-with-respect-to-dependency-injection)|
-|111| [What is Angular Ivy?](#what-is-angular-ivy)|
-|112| [What are the features included in ivy preview?](#what-are-the-features-included-in-ivy-preview)|
-|113| [Can I use AOT compilation with Ivy?](#can-i-use-aot-compilation-with-ivy)|
 |114| [What is Angular Language Service?](#what-is-angular-language-service)|
 |115| [How do you install angular language service in the project?](#how-do-you-install-angular-language-service-in-the-project)|
 |116| [Is there any editor support for Angular Language Service?](#is-there-any-editor-support-for-angular-language-service)|
@@ -670,59 +667,6 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
- 111. ### What is Angular Ivy?
-      Angular Ivy is a new rendering engine for Angular. You can choose to opt in a preview version of Ivy from Angular version 8.
-
-      1. You can enable ivy in a new project by using the --enable-ivy flag with the ng new command
-
-          ```bash
-          ng new ivy-demo-app --enable-ivy
-          ```
-      2. You can add it to an existing project by adding `enableIvy` option in the `angularCompilerOptions` in your project's `tsconfig.app.json`.
-
-          ```javascript
-          {
-            "compilerOptions": { ... },
-            "angularCompilerOptions": {
-              "enableIvy": true
-            }
-          }
-          ```
-
-   **[⬆ Back to Top](#table-of-contents)**
-
- 112. ### What are the features included in ivy preview?
-      You can expect below features with Ivy preview,
-
-      1. Generated code that is easier to read and debug at runtime
-      2. Faster re-build time
-      3. Improved payload size
-      4. Improved template type checking
-
-   **[⬆ Back to Top](#table-of-contents)**
-
- 113. ### Can I use AOT compilation with Ivy?
-      Yes, it is a recommended configuration. Also, AOT compilation with Ivy is faster. So you need set the default build options(with in angular.json) for your project to always use AOT compilation.
-
-      ```javascript
-      {
-        "projects": {
-          "my-project": {
-            "architect": {
-              "build": {
-                "options": {
-                  ...
-                  "aot": true,
-                }
-              }
-            }
-          }
-        }
-      }
-      ```
-
-   **[⬆ Back to Top](#table-of-contents)**
-
  114. ### What is Angular Language Service?
       The Angular Language Service is a way to get completions, errors, hints, and navigation inside your Angular templates whether they are external in an HTML file or embedded in annotations/decorators in a string. It has the ability to autodetect that you are opening an Angular file, reads your `tsconfig.json` file, finds all the templates you have in your application, and then provides all the language services.
 
@@ -803,11 +747,6 @@
       4. **UPPER_UNDERSCORE_CASE:** All constants uses capital letters connected with underscores. For example, "NUMBER_OF_USERS".
 
    **[⬆ Back to Top](#table-of-contents)**
-
-
-
-   **[⬆ Back to Top](#table-of-contents)**
-
 
  129. ### What is a DI token?
       A DI token is a lookup token associated with a dependency provider in dependency injection system. The injector maintains an internal token-provider map that it references when asked for a dependency and the DI token is the key to the map. Let's take example of DI Token usage,
