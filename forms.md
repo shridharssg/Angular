@@ -2,21 +2,21 @@
 
 | No. | Questions |
 |---- | ---------
-|256| [What are reactive forms?](#what-are-reactive-forms)|
-|257| [What are dynamic forms?](#what-are-dynamic-forms)|
-|258| [What are template driven forms?](#what-are-template-driven-forms)|
-|259| [What are the differences between reactive forms and template driven forms?](#what-are-the-differences-between-reactive-forms-and-template-driven-forms)|
-|260| [What are the different ways to group form controls?](#what-are-the-different-ways-to-group-form-controls)|
-|261| [How do you update specific properties of a form model?](#how-do-you-update-specific-properties-of-a-form-model)|
-|262| [What is the purpose of FormBuilder?](#what-is-the-purpose-of-formbuilder)|
-|263| [How do you verify the model changes in forms?](#how-do-you-verify-the-model-changes-in-forms)|
-|264| [What are the state CSS classes provided by ngModel?](#what-are-the-state-css-classes-provided-by-ngmodel)|
-|265| [How do you reset the form?](#how-do-you-reset-the-form)|
-|266| [What are the types of validator functions?](#what-are-the-types-of-validator-functions)|
-|267| [Can you give an example of built-in validators?](#can-you-give-an-example-of-built-in-validators)|
-|268| [How do you optimize the performance of async validators?](#how-do-you-optimize-the-performance-of-async-validators)|
+|1| [What are reactive forms?](#what-are-reactive-forms)|
+|2| [What are dynamic forms?](#what-are-dynamic-forms)|
+|3| [What are template driven forms?](#what-are-template-driven-forms)|
+|4| [What are the differences between reactive forms and template driven forms?](#what-are-the-differences-between-reactive-forms-and-template-driven-forms)|
+|5| [What are the different ways to group form controls?](#what-are-the-different-ways-to-group-form-controls)|
+|6| [How do you update specific properties of a form model?](#how-do-you-update-specific-properties-of-a-form-model)|
+|7| [What is the purpose of FormBuilder?](#what-is-the-purpose-of-formbuilder)|
+|8| [How do you verify the model changes in forms?](#how-do-you-verify-the-model-changes-in-forms)|
+|9| [What are the state CSS classes provided by ngModel?](#what-are-the-state-css-classes-provided-by-ngmodel)|
+|10| [How do you reset the form?](#how-do-you-reset-the-form)|
+|11| [What are the types of validator functions?](#what-are-the-types-of-validator-functions)|
+|12| [Can you give an example of built-in validators?](#can-you-give-an-example-of-built-in-validators)|
+|13| [How do you optimize the performance of async validators?](#how-do-you-optimize-the-performance-of-async-validators)|
 
-256. ### What are reactive forms?
+1. ### What are reactive forms?
      Reactive forms is a model-driven approach for creating forms in a reactive style(form inputs changes over time). These are built around observable streams, where form inputs and values are provided as streams of input values. Let's follow the below steps to create reactive forms,
      1. Register the reactive forms module which declares reactive-form directives in your app
          ```js
@@ -72,12 +72,12 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-257. ### What are dynamic forms?
+2. ### What are dynamic forms?
      Dynamic forms is a pattern in which we build a form dynamically based on metadata that describes a business object model. You can create them based on reactive form API.
      **[⬆ Back to Top](#table-of-contents)**
 
 
-258. ### What are template driven forms?
+3. ### What are template driven forms?
      Template driven forms are model-driven forms where you write the logic, validations, controls etc, in the template part of the code using directives. They are suitable for simple scenarios and uses two-way binding with [(ngModel)] syntax.
      For example, you can create register form easily by following the below simple steps,
 
@@ -151,7 +151,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-259. ### What are the differences between reactive forms and template driven forms?
+4. ### What are the differences between reactive forms and template driven forms?
      Below are the main differences between reactive forms and template driven forms
 
      | Feature | Reactive | Template-Driven |
@@ -166,7 +166,7 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 
-260. ### What are the different ways to group form controls?
+5. ### What are the different ways to group form controls?
      Reactive forms provide two ways of grouping multiple related controls.
      1. **FormGroup**: It defines a form with a fixed set of controls those can be managed together in an one object. It has same properties and methods similar to a FormControl instance.
         This FormGroup can be nested to create complex forms as below.
@@ -300,7 +300,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-261. ### How do you update specific properties of a form model?
+6. ### How do you update specific properties of a form model?
      You can use `patchValue()` method to update specific properties defined in the form model. For example,you can update the name and street of certain profile on click of the update button as shown below.
      ```js
      updateProfile() {
@@ -322,7 +322,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-262. ### What is the purpose of FormBuilder?
+7. ### What is the purpose of FormBuilder?
      FormBuilder is used as syntactic sugar for easily creating instances of a FormControl, FormGroup, or FormArray. This is helpful to reduce the amount of boilerplate needed to build complex reactive forms. It is available as an injectable helper class of the `@angular/forms` package.
 
      For example, the user profile component creation becomes easier as shown here.
@@ -343,7 +343,7 @@
      ```
      **[⬆ Back to Top](#table-of-contents)**
 
-263. ### How do you verify the model changes in forms?
+8. ### How do you verify the model changes in forms?
      You can add a getter property(let's say, diagnostic) inside component to return a JSON representation of the model during the development. This is useful to verify whether the values are really flowing from the input box to the model and vice versa or not.
      ```js
      export class UserProfileComponent {
@@ -364,7 +364,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-264. ### What are the state CSS classes provided by ngModel?
+9. ### What are the state CSS classes provided by ngModel?
      The ngModel directive updates the form control with special Angular CSS classes to reflect it's state. Let's find the list of classes in a tabular format,
 
      | Form control state | If true | If false |
@@ -375,7 +375,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-265. ### How do you reset the form?
+10. ### How do you reset the form?
      In a model-driven form, you can reset the form just by calling the function `reset()` on our form model.
      For example, you can reset the form model on submission as follows,
      ```js
@@ -391,7 +391,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-266. ### What are the types of validator functions?
+11. ### What are the types of validator functions?
      In reactive forms, the validators can be either synchronous or asynchronous functions,
      1. **Sync validators:** These are the synchronous functions which take a control instance and immediately return either a set of validation errors or null. Also, these functions passed as second argument while instantiating the form control. The main use cases are simple checks like whether a field is empty, whether it exceeds a maximum length etc.
      2. **Async validators:** These are the asynchronous functions which take a control instance and return a Promise or Observable that later emits a set of validation errors or null. Also, these functions passed as second argument while instantiating the form control. The main use cases are complex validations like hitting a server to check the availability of a username or email.
@@ -407,7 +407,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-267. ### Can you give an example of built-in validators?
+12. ### Can you give an example of built-in validators?
      In reactive forms, you can use built-in validator like `required` and `minlength` on your input form controls. For example, the registration form can have these validators on name input field
      ```js
      this.registrationForm = new FormGroup({
@@ -421,7 +421,7 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-268. ### How do you optimize the performance of async validators?
+13. ### How do you optimize the performance of async validators?
      Since all validators run after every form value change, it creates a major impact on performance with async validators by hitting the external API on each keystroke. This situation can be avoided by delaying the form validity by changing the updateOn property from change (default) to submit or blur.
      The usage would be different based on form types,
      1. **Template-driven forms:** Set the property on `ngModelOptions` directive
