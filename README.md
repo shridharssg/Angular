@@ -23,6 +23,11 @@ The constructor() should only be used to initialize class members but shouldn't 
 
 ### Q.AOT vs JIT
 
+	Angular provides two compilation techniques, AOT and JIT, to optimize and improve performance.
+ 	default : AOT
+
+  	![image](https://github.com/shridharssg/Angular/assets/139750756/7a9cde12-1bd5-4ab3-9188-c83a09d79a45)
+
 ---
 
 ### Q. why angular is called single page application--- 
