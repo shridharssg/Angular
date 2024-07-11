@@ -56,8 +56,6 @@
 |141| [What is the purpose of differential loading in CLI?](#what-is-the-purpose-of-differential-loading-in-cli)|
 |142| [Is Angular supports dynamic imports?](#is-angular-supports-dynamic-imports)|
 |144| [What are workspace APIs?](#what-are-workspace-apis)|
-
-
 |154| [What is the reason to deprecate Web Tracing Framework?](#what-is-the-reason-to-deprecate-web-tracing-framework)|
 |155| [What is the reason to deprecate web worker packages?](#what-is-the-reason-to-deprecate-web-worker-packages)|
 |156| [How do you find angular CLI version?](#how-do-you-find-angular-cli-version)|
