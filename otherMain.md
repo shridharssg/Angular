@@ -25,7 +25,16 @@
 |164| [What are the various security contexts in Angular?](#what-are-the-various-security-contexts-in-Angular)|
 |166| [What is the purpose of innerHTML?](#what-is-the-purpose-of-innerhtml)|
 |172| [Is angular prevents http level vulnerabilities?](#is-angular-prevents-http-level-vulnerabilities)|
-
+|111| [What is Angular Ivy?](#what-is-angular-ivy)|
+|112| [What are the features included in ivy preview?](#what-are-the-features-included-in-ivy-preview)|
+|113| [Can I use AOT compilation with Ivy?](#can-i-use-aot-compilation-with-ivy)|
+|196| [How do you use jquery in Angular?](#how-do-you-use-jquery-in-angular)|
+|199| [How can I use SASS in angular project?](#how-can-i-use-sass-in-angular-project)|
+|201| [What is the difference between ngIf and hidden property?](#what-is-the-difference-between-ngif-and-hidden-property)|
+|203| [What is index property in ngFor directive?](#what-is-index-property-in-ngfor-directive)|
+|204| [What is the purpose of ngFor trackBy?](#what-is-the-purpose-of-ngfor-trackby)|
+|205| [What is the purpose of ngSwitch directive?](#what-is-the-purpose-of-ngswitch-directive)|
+|206| [Is it possible to do aliasing for inputs and outputs?](#is-it-possible-to-do-aliasing-for-inputs-and-outputs)|
 
 60. ### What are the various kinds of directives?
     There are mainly three kinds of directives:
@@ -372,5 +381,166 @@
      Angular has built-in support for preventing http level vulnerabilities such as as cross-site request forgery (CSRF or XSRF) and cross-site script inclusion (XSSI). Even though these vulnerabilities need to be mitigated on server-side, Angular provides helpers to make the integration easier on the client side.
      1. HttpClient supports a token mechanism used to prevent XSRF attacks
      2. HttpClient library recognizes the convention of prefixed JSON responses(which non-executable js code with ")]}',\\n" characters) and automatically strips the string ")]}',\\n" from all responses before further parsing
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+ 111. ### What is Angular Ivy?
+      Angular Ivy is a new rendering engine for Angular. You can choose to opt in a preview version of Ivy from Angular version 8.
+
+      1. You can enable ivy in a new project by using the --enable-ivy flag with the ng new command
+
+          ```bash
+          ng new ivy-demo-app --enable-ivy
+          ```
+      2. You can add it to an existing project by adding `enableIvy` option in the `angularCompilerOptions` in your project's `tsconfig.app.json`.
+
+          ```javascript
+          {
+            "compilerOptions": { ... },
+            "angularCompilerOptions": {
+              "enableIvy": true
+            }
+          }
+          ```
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+ 112. ### What are the features included in ivy preview?
+      You can expect below features with Ivy preview,
+
+      1. Generated code that is easier to read and debug at runtime
+      2. Faster re-build time
+      3. Improved payload size
+      4. Improved template type checking
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+ 113. ### Can I use AOT compilation with Ivy?
+      Yes, it is a recommended configuration. Also, AOT compilation with Ivy is faster. So you need set the default build options(with in angular.json) for your project to always use AOT compilation.
+
+      ```javascript
+      {
+        "projects": {
+          "my-project": {
+            "architect": {
+              "build": {
+                "options": {
+                  ...
+                  "aot": true,
+                }
+              }
+            }
+          }
+        }
+      }
+      ```
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+   196. ### How do you use jquery in Angular?
+     You can use jquery in Angular using 3 simple steps,
+     1. **Install the dependency:** At first, install the jquery dependency using npm
+         ```cmd
+            npm install --save jquery
+         ```
+     2. **Add the jquery script:** In Angular-CLI project, add the relative path to jquery in the angular.json file.
+         ```javascript
+         "scripts": [
+            "node_modules/jquery/dist/jquery.min.js"
+         ]
+         ```
+     3. **Start using jquery:** Define the element in template. Whereas declare the jquery variable and apply CSS classes on the element.
+         ```html
+         <div id="elementId">
+           <h1>JQuery integration</h1>
+         </div>
+         ```
+         ```javascript
+         import {Component, OnInit} from '@angular/core';
+
+         declare var $: any; // (or) import * as $ from 'jquery';
+
+         @Component({
+           selector: 'app-root',
+           templateUrl: './app.component.html',
+           styleUrls: ['./app.component.css']
+         })
+         export class AppComponent implements OnInit {
+           ngOnInit(): void {
+             $(document).ready(() => {
+               $('#elementId').css({'text-color': 'blue', 'font-size': '150%'});
+             });
+           }
+         }
+         ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+     
+199. ### How can I use SASS in angular project?
+     When you are creating your project with angular cli, you can use `ng new`command. It generates all your components with predefined sass files.
+     ```javascript
+     ng new My_New_Project --style=sass
+     ```
+     But if you are changing your existing style in your project then use `ng set` command,
+     ```javascript
+     ng set defaults.styleExt scss
+     ```
+     **[⬆ Back to Top](#table-of-contents)**
+
+203. ### What is index property in ngFor directive?
+     The index property of the NgFor directive is used to return the zero-based index of the item in each iteration. You can capture the index in a template input variable and use it in the template.
+
+     For example, you can capture the index in a variable named indexVar and displays it with the todo's name using ngFor directive as below.
+     ```javascript
+     <div *ngFor="let todo of todos; let i=index">{{i + 1}} - {{todo.name}}</div>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+204. ### What is the purpose of ngFor trackBy?
+     The main purpose of using *ngFor with trackBy option is performance optimization. Normally if you use NgFor with large data sets, a small change to one item by removing or adding an item, can trigger a cascade of DOM manipulations. In this case, Angular sees only a fresh list of new object references and to replace the old DOM elements with all new DOM elements. You can help Angular to track which items added or removed by providing a `trackBy` function which takes the index and the current item as arguments and needs to return the unique identifier for this item.
+
+     For example, lets set trackBy to the trackByTodos() method
+     ```javascript
+     <div *ngFor="let todo of todos; trackBy: trackByTodos">
+       ({{todo.id}}) {{todo.name}}
+     </div>
+     ```
+     and define the trackByTodos method,
+     ```javascript
+     trackByTodos(index: number, item: Todo): number { return todo.id; }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+205. ### What is the purpose of ngSwitch directive?
+     **NgSwitch** directive is similar to JavaScript switch statement which displays one element from among several possible elements, based on a switch condition. In this case only the selected element placed into the DOM. It has been used along with `NgSwitch`, `NgSwitchCase` and `NgSwitchDefault` directives.
+
+     For example, let's display the browser details based on selected browser using ngSwitch directive.
+     ```javascript
+     <div [ngSwitch]="currentBrowser.name">
+       <chrome-browser    *ngSwitchCase="'chrome'"    [item]="currentBrowser"></chrome-browser>
+       <firefox-browser   *ngSwitchCase="'firefox'"     [item]="currentBrowser"></firefox-browser>
+       <opera-browser     *ngSwitchCase="'opera'"  [item]="currentBrowser"></opera-browser>
+       <safari-browser     *ngSwitchCase="'safari'"   [item]="currentBrowser"></safari-browser>
+       <ie-browser  *ngSwitchDefault           [item]="currentItem"></ie-browser>
+     </div>
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+206. ### Is it possible to do aliasing for inputs and outputs?
+     Yes, it is possible to do aliasing for inputs and outputs in two ways.
+     1. **Aliasing in metadata:** The inputs and outputs in the metadata aliased using a colon-delimited (:) string with the directive property name on the left and the public alias on the right. i.e. It will be in the format of propertyName:alias.
+         ```javascript
+         inputs: ['input1: buyItem'],
+         outputs: ['outputEvent1: completedEvent']
+         ```
+     2. **Aliasing with @Input()/@Output() decorator:** The alias can be specified for the property name by passing the alias name to the @Input()/@Output() decorator.i.e. It will be in the form of @Input(alias) or @Output(alias).
+         ```javascript
+         @Input('buyItem') input1: string;
+         @Output('completedEvent') outputEvent1 = new EventEmitter<string>();
+         ```
 
      **[⬆ Back to Top](#table-of-contents)**
