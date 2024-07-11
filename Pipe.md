@@ -8,6 +8,7 @@
 |4| [What is a custom pipe?](#what-is-a-custom-pipe)|
 |5| [Give an example of custom pipe?](#give-an-example-of-custom-pipe)|
 |6| [What is the difference between pure and impure pipe?](#what-is-the-difference-between-pure-and-impure-pipe)|
+|202| [What is slice pipe?](#what-is-slice-pipe)|
 
 28. ### What are pipes?
     Pipes are simple functions that use [template expressions](#what-are-template-expressions) to accept data as input and transform it into a desired output. For example, let us take a pipe to transform a component's birthday property into a human-friendly date using **date** pipe.
@@ -109,4 +110,25 @@
     A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe. For example, any changes to a primitive input value (String, Number, Boolean, Symbol) or a changed object reference (Date, Array, Function, Object). An impure pipe is called for every change detection cycle no matter whether the value or parameters changes. i.e, An impure pipe is called often, as often as every keystroke or mouse-move.
 
   **[⬆ Back to Top](#table-of-contents)**
+
+  
+202. ### What is slice pipe?
+     The slice pipe is used to create a new Array or String containing a subset (slice) of the elements. The syntax looks like as below,
+     ```javascript
+     {{ value_expression | slice : start [ : end ] }}
+     ```
+     For example, you can provide 'hello' list based on a greeting array,
+     ```javascript
+     @Component({
+       selector: 'list-pipe',
+       template: `<ul>
+         <li *ngFor="let i of greeting | slice:0:5">{{i}}</li>
+       </ul>`
+     })
+     export class PipeListComponent {
+       greeting: string[] = ['h', 'e', 'l', 'l', 'o', 'm','o', 'r', 'n', 'i', 'n', 'g'];
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
 
