@@ -116,3 +116,9 @@
     No, the AOT collector understands a subset  of (or limited) JavaScript features. If an expression uses unsupported syntax, the collector writes an error node to the .metadata.json file. Later point of time, the compiler reports an error if it needs that piece of metadata to generate the application code.
 
   **[⬆ Back to Top](#table-of-contents)**
+
+
+190. ### What is AOT compiler?
+     The AOT compiler is part of a build process that produces a small, fast, ready-to-run application package, typically for production. It converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase before the browser downloads and runs that code.
+
+     **[⬆ Back to Top](#table-of-contents)**
