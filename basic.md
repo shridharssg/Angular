@@ -672,4 +672,14 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
+22. ### How many way we can share data between component?
+    
+    1.**Input/Output Binding:** Parent components can pass data to child components through input properties (@Input decorator) and receive data from child components through output properties (@Output decorator).
+    2.**ViewChild/ContentChild:** Parent components can access child components and their properties using ViewChild and ContentChild decorators.
+    3.**Services:** Shared data can be managed and accessed using Angular services. Components can inject the same service instance and use it to share data.
+    4.**State Management:** NgRx can be used for managing application state and sharing data between components using a centralized store.
+
+23. ### Is it possible to call an API in the constructor of an Angular component instead of using the ngOnInit lifecycle hook?
+    
+    While it is technically possible to call an API from the Angular constructor, it’s not considered a best practice. The constructor is invoked when the component class is     initialized, before Angular has fully initialized certain features like dependency injection or input properties. This means that calling an API before these features are fully available may lead to unexpected behavior or errors.
 
