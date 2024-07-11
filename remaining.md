@@ -87,12 +87,8 @@
 |193| [What is protractor?](#what-is-protractor)|
 |194| [What is collection?](#what-is-collection)|
 |195| [How do you create schematics for libraries?](#how-do-you-create-schematics-for-libraries)|
-|196| [How do you use jquery in Angular?](#how-do-you-use-jquery-in-angular)|
 |197| [What is the reason for No provider for HTTP exception?](#what-is-the-reason-for-no-provider-for-http-exception)|
 |198| [What is router state?](#what-is-router-state)|
-|199| [How can I use SASS in angular project?](#how-can-i-use-sass-in-angular-project)|
-|200| [What is the purpose of hidden property?](#what-is-the-purpose-of-hidden-property)|
-|201| [What is the difference between ngIf and hidden property?](#what-is-the-difference-between-ngif-and-hidden-property)|
 |207| [What is safe navigation operator?](#what-is-safe-navigation-operator)|
 |208| [Is any special configuration required for Angular9?](#is-any-special-configuration-required-for-angular9)|
 |209| [What are type safe TestBed API changes in Angular9?](#what-are-type-safe-testbed-api-changes-in-angular9)|
@@ -1326,45 +1322,6 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-196. ### How do you use jquery in Angular?
-     You can use jquery in Angular using 3 simple steps,
-     1. **Install the dependency:** At first, install the jquery dependency using npm
-         ```cmd
-            npm install --save jquery
-         ```
-     2. **Add the jquery script:** In Angular-CLI project, add the relative path to jquery in the angular.json file.
-         ```javascript
-         "scripts": [
-            "node_modules/jquery/dist/jquery.min.js"
-         ]
-         ```
-     3. **Start using jquery:** Define the element in template. Whereas declare the jquery variable and apply CSS classes on the element.
-         ```html
-         <div id="elementId">
-           <h1>JQuery integration</h1>
-         </div>
-         ```
-         ```javascript
-         import {Component, OnInit} from '@angular/core';
-
-         declare var $: any; // (or) import * as $ from 'jquery';
-
-         @Component({
-           selector: 'app-root',
-           templateUrl: './app.component.html',
-           styleUrls: ['./app.component.css']
-         })
-         export class AppComponent implements OnInit {
-           ngOnInit(): void {
-             $(document).ready(() => {
-               $('#elementId').css({'text-color': 'blue', 'font-size': '150%'});
-             });
-           }
-         }
-         ```
-
-     **[⬆ Back to Top](#table-of-contents)**
-
 197. ### What is the reason for No provider for HTTP exception?
      This exception is due to missing HttpClientModule in your module. You just need to import in module as below,
      ```javascript
@@ -1395,16 +1352,6 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
-199. ### How can I use SASS in angular project?
-     When you are creating your project with angular cli, you can use `ng new`command. It generates all your components with predefined sass files.
-     ```javascript
-     ng new My_New_Project --style=sass
-     ```
-     But if you are changing your existing style in your project then use `ng set` command,
-     ```javascript
-     ng set defaults.styleExt scss
-     ```
-     **[⬆ Back to Top](#table-of-contents)**
 
 210. ### Is mandatory to pass static flag for ViewChild?
      In Angular 8, the static flag is required for ViewChild. Whereas in Angular9, you no longer need to pass this property. Once you updated to Angular9 using `ng update`, the migration will remove { static: false } script everywhere.
