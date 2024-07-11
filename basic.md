@@ -29,6 +29,10 @@
 |25| [What are template expressions?](#what-are-template-expressions)|
 |26| [What are template statements?](#what-are-template-statements)|
 |27| [How do you categorize data binding types?](#how-do-you-categorize-data-binding-types)|
+|125| [What are the class decorators in Angular?](#what-are-the-class-decorators-in-angular)|
+|126| [What are class field decorators?](#what-are-class-field-decorators)|
+|127| [What is declarable in Angular?](#what-is-declarable-in-angular)|
+|128| [What are the restrictions on declarable classes?](#what-are-the-restrictions-on-declarable-classes)|
 
 1. ### What is Angular Framework?
 
@@ -557,3 +561,47 @@
       | View-to-source-to-view(Two-way)| 1. [(target)]="expression" 2. bindon-target="expression"| Two-way |
 
   **[⬆ Back to Top](#table-of-contents)**
+
+   125. ### What are the class decorators in Angular?
+      A class decorator is a decorator that appears immediately before a class definition, which declares the class to be of the given type, and provides metadata suitable to the type
+
+      The following list of decorators comes under class decorators,
+
+      1. @Component()
+      2. @Directive()
+      3. @Pipe()
+      4. @Injectable()
+      5. @NgModule()
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+ 126. ### What are class field decorators?
+      The class field decorators are the statements declared immediately before a field in a class definition that defines the type of that field. Some of the examples are: @input and @output,
+
+      ```javascript
+      @Input() myProperty;
+      @Output() myEvent = new EventEmitter();
+      ```
+
+ 127. ### What is declarable in Angular?
+      Declarable is a class type that you can add to the declarations list of an NgModule. The class types such as components, directives, and pipes comes can be declared in the module. The structure of declarations would be,
+
+      ```javascript
+      declarations: [
+        YourComponent,
+        YourPipe,
+        YourDirective
+      ],
+      ```
+
+   **[⬆ Back to Top](#table-of-contents)**
+
+ 128. ### What are the restrictions on declarable classes?
+      Below classes shouldn't be declared,
+
+      1. A class that's already declared in another NgModule
+      2. Ngmodule classes
+      3. Service classes
+      4. Helper classes
+
+   **[⬆ Back to Top](#table-of-contents)**
