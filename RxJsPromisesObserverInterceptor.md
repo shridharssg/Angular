@@ -125,7 +125,7 @@
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### How can you read full response?
+5. ### How can you read full response?
     The response body doesn't or may not return full response data because sometimes servers also return special headers or status code, which are important for the application workflow. In order to get the full response, you should use `observe` option from `HttpClient`:
 
     ```javascript
@@ -138,7 +138,7 @@ Q. ### How can you read full response?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### How do you perform Error handling?
+6. ### How do you perform Error handling?
     If the request fails on the server or fails to reach the server due to network issues, then `HttpClient` will return an error object instead of a successful reponse. In this case, you need to handle in the component by passing `error` object as a second callback to `subscribe()` method.
 
     Let's see how it can be handled in the component with an example,
@@ -155,7 +155,7 @@ Q. ### How do you perform Error handling?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is RxJS?
+7. ### What is RxJS?
     RxJS is a library for composing asynchronous and callback-based code in a functional, reactive style using Observables. Many APIs such as  HttpClient produce and consume RxJS Observables and also uses operators for processing observables.
 
     For example, you can import observables and operators for using HttpClient as below,
@@ -166,7 +166,7 @@ Q. ### What is RxJS?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is subscribing?
+8. ### What is subscribing?
     An Observable instance begins publishing values only when someone subscribes to it. So you need to subscribe by calling the `subscribe()` method of the instance, passing an observer object to receive the notifications.
 
     Let's take an example of creating and subscribing to a simple observable, with an observer that logs the received message to the console.
@@ -193,7 +193,7 @@ Q. ### What is subscribing?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is an observable?
+9. ### What is an observable?
     An Observable is a unique Object similar to a Promise that can help manage async code. Observables are not part of the JavaScript language so we need to rely on a popular Observable library called RxJS.
     The observables are created using new keyword.
 
@@ -210,7 +210,7 @@ Q. ### What is an observable?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is an observer?
+10. ### What is an observer?
     Observer is an interface for a consumer of push-based notifications delivered by an Observable. It has below structure,
 
     ```javascript
@@ -230,7 +230,7 @@ Q. ### What is an observer?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is the difference between promise and observable?
+11. ### What is the difference between promise and observable?
     Below are the list of differences between promise and observable:
 
        | Observable | Promise |
@@ -242,7 +242,7 @@ Q. ### What is the difference between promise and observable?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is multicasting?
+12. ### What is multicasting?
     Multi-casting is the practice of broadcasting to a list of multiple subscribers in a single execution.
 
     Let's demonstrate the multi-casting feature:
@@ -264,7 +264,7 @@ Q. ### What is multicasting?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### How do you perform error handling in observables?
+13. ### How do you perform error handling in observables?
     You can handle errors by specifying an **error callback** on the observer instead of relying on `try`/`catch`, which are ineffective in asynchronous environment.
 
     For example, you can define error callback as below,
@@ -277,7 +277,7 @@ Q. ### How do you perform error handling in observables?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What is the shorthand notation for subscribe method?
+14. ### What is the shorthand notation for subscribe method?
     The `subscribe()` method can accept callback function definitions in line, for `next`, `error`, and `complete` handlers. It is known as shorthand notation or Subscribe method with positional arguments.
 
     For example, you can define subscribe method as below,
@@ -291,7 +291,7 @@ Q. ### What is the shorthand notation for subscribe method?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What are the utility functions provided by RxJS?
+15. ### What are the utility functions provided by RxJS?
     The RxJS library also provides below utility functions for creating and working with observables.
 
     1. Converting existing code for async operations into observables
@@ -302,7 +302,7 @@ Q. ### What are the utility functions provided by RxJS?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What are observable creation functions?
+16. ### What are observable creation functions?
     RxJS provides creation functions for the process of creating observables from promises, events, timers and Ajax requests. Let us explain each of them with an example:
     1. Create an observable from a promise
         ```javascript
@@ -340,11 +340,11 @@ Q. ### What are observable creation functions?
 
   **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What will happen if you do not supply handler for the observer?
+17. ### What will happen if you do not supply handler for the observer?
     Usually, an observer object can define any combination of `next`, `error`, and `complete` notification type handlers. If you don't supply a handler for a notification type, the observer just ignores notifications of that type.
 
 
-Q. ### what is an rxjs subject in Angular
+18. ### what is an rxjs subject in Angular
      An RxJS Subject is a special type of Observable that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.
       
      A Subject is like an Observable, but can multicast to many Observers. Subjects are like EventEmitters: they maintain a registry of many listeners.
@@ -367,7 +367,7 @@ Q. ### what is an rxjs subject in Angular
 
    **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What are Http Interceptors?
+18. ### What are Http Interceptors?
      Http Interceptors are part of @angular/common/http, which inspect and transform HTTP requests from your application to the server and vice-versa on HTTP responses. These interceptors can perform a variety of implicit tasks, from authentication to logging.
 
      The syntax of HttpInterceptor interface looks like as below,
@@ -407,7 +407,7 @@ Q. ### What are Http Interceptors?
 
      **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### What are the applications of HTTP interceptors?
+19. ### What are the applications of HTTP interceptors?
      The HTTP Interceptors can be used for different variety of tasks,
 
      1. Authentication
@@ -419,7 +419,7 @@ Q. ### What are the applications of HTTP interceptors?
 
      **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### Is multiple interceptors supported in Angular?
+20. ### Is multiple interceptors supported in Angular?
      Yes, Angular supports multiple interceptors at a time. You could define multiple interceptors in providers property:
      ```javascript
      providers: [
@@ -431,7 +431,7 @@ Q. ### Is multiple interceptors supported in Angular?
 
      **[⬆ Back to Top](#table-of-contents)**
 
-Q. ### How can I use interceptor for an entire application?
+21. ### How can I use interceptor for an entire application?
      You can use same instance of `HttpInterceptors` for the entire app by importing the `HttpClientModule` only in your AppModule, and add the interceptors to the root application injector.
      For example, let's define a class that is injectable in root application.
       ```javascript
