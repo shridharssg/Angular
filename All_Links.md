@@ -98,6 +98,14 @@ https://www.tektutorialshub.com/angular/angular-child-routes-nested-routes/
 
 https://www.tektutorialshub.com/angular/angular-route-guards/
 
+## HTTP
+
+## Observable
+
+## Handling Errors
+
+## Advanced Components
+
 ---
 
 **CheatSheet** : https://v2.angular.io/docs/ts/latest/guide/cheatsheet.html
