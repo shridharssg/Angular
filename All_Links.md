@@ -98,7 +98,13 @@ https://www.tektutorialshub.com/angular/angular-child-routes-nested-routes/
 
 https://www.tektutorialshub.com/angular/angular-route-guards/
 
+---
+
 ## HTTP
+
+Interceptor : https://www.tektutorialshub.com/angular/angular-httpclient-http-interceptor/
+
+---
 
 ## Observable
 
