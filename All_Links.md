@@ -104,6 +104,8 @@ https://www.tektutorialshub.com/angular/angular-route-guards/
 
 Interceptor : https://www.tektutorialshub.com/angular/angular-httpclient-http-interceptor/
 
+the retry operator can be used to retry the failed operation.
+
 ---
 
 ## Observable
