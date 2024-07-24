@@ -102,6 +102,8 @@ https://www.tektutorialshub.com/angular/angular-route-guards/
 
 ## HTTP
 
+http headers : https://www.tektutorialshub.com/angular/angular-httpheaders/
+
 Interceptor : https://www.tektutorialshub.com/angular/angular-httpclient-http-interceptor/
 
 the retry operator can be used to retry the failed operation.
