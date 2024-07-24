@@ -104,15 +104,29 @@ https://www.tektutorialshub.com/angular/angular-route-guards/
 
 http headers : https://www.tektutorialshub.com/angular/angular-httpheaders/
 
+http-get : https://www.tektutorialshub.com/angular/angular-http-get-example-using-httpclient/
+
+http-post : https://www.tektutorialshub.com/angular/angular-http-post-example/
+
 Interceptor : https://www.tektutorialshub.com/angular/angular-httpclient-http-interceptor/
 
-the retry operator can be used to retry the failed operation.
+error handing : https://www.tektutorialshub.com/angular/angular-http-error-handling/
+
+the rxjs retry operator can be used to retry the failed operation.
 
 ---
 
 ## Observable
 
+---
+
 ## Handling Errors
+
+---
+
+## Angular Config
+
+https://www.tektutorialshub.com/angular/angular-runtime-configuration/
 
 ## Advanced Components
 
