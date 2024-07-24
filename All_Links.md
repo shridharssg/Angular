@@ -124,7 +124,7 @@ the rxjs retry operator can be used to retry the failed operation.
 
 ---
 
-## Angular Config
+## Configuration
 
 https://www.tektutorialshub.com/angular/angular-runtime-configuration/
 
